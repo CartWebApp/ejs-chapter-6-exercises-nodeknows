@@ -5,12 +5,26 @@
 // Add a getter property length to the prototype that computes the length of the vector—that is, the distance of the point (x, y) from the origin (0, 0).
 
 // Your code here.
-
+class Vec {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    plus(input) {
+        return new Vec(this.x+input.x, this.y+input.y)
+    }
+    minus(input) {
+        return new Vec(this.x-input.x, this.y-input.y)
+    }
+    get length() {
+        return Math.sqrt((this.x**2)+(this.y**2))
+    }
+} 
 
 // Tests:
 console.log(new Vec(1, 2).plus(new Vec(2, 3)));
 // → Vec{x: 3, y: 5}
 console.log(new Vec(1, 2).minus(new Vec(2, 3)));
 // → Vec{x: -1, y: -1}
-console.log(new Vec(3, 4).length);
+console.log(new Vec(3, 4).length); // f: √(x**2 + y**2)
 // → 5
