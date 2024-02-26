@@ -11,5 +11,5 @@ let map = {one: true, two: true, hasOwnProperty: true};
 
 // !!! Fix the call code below, do not modify the object above. !!!
 
-console.log(map.__proto__.hasOwnProperty("one"));
+console.log(map.__proto__.hasOwnProperty.call(map, 'hasOwnProperty'));
 // → true
